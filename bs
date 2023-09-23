@@ -1,0 +1,12 @@
+#!/bin/bash
+
+NAME="groza"
+IPAD="10.0.111.233"
+
+scp ~/prog/Internship-Autumn-ITTP/main.py $NAME@$IPAD:~/ &&
+ssh $NAME@$IPAD "cd && python3 main.py>file.txt" &&
+scp $NAME@$IPAD:~/file.txt ~/prog/Internship-Autumn-ITTP/ &&
+cat file.txt
+
+
+
