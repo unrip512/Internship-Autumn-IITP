@@ -1,6 +1,6 @@
 #!/bin/bash
 
 export $(cat .env | xargs) &&
-scp ~/prog/Internship-Autumn-ITTP/time-client/server.py $NAME@$IPAD:~/ && cat text1.txt
-ssh $NAME@$IPAD "cd && python3 server.py>text.txt" & cat text2.txt && cd ~/prog/Internship-Autumn-ITTP/time-client/ && python3 client.py
+scp ~/prog/Internship-Autumn-ITTP/time-client/server.py $NAME@$IPAD:~/ &&
+ssh $NAME@$IPAD "cd && python3 server.py>text.txt" & cd ~/prog/Internship-Autumn-ITTP/time-client/ && python3 client.py
 
