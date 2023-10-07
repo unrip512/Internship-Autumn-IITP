@@ -11,14 +11,16 @@ print("Сервер запущен и ожидает подключений...")
 client_socket, client_address = server_socket.accept()
 print(f"Клиент подключился: {client_address}")
 
-
-pict = 'photo.jpg'
+pict = 'photo2.jpg'
 f = open(pict, mode='rb')
 
-data1 = f.read(2048)
-while data1:
-    client_socket.send(data1)
+while True:
     data1 = f.read(2048)
+    if data1:
+        client_socket.send(data1)
+    else:
+        break
+
 
 f.close()
 client_socket.close()
