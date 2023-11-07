@@ -30,12 +30,12 @@ class Knn:
             self.tr_set.append(Point(x_val[i], y_val[i]))
 
     def predict(self, x_val):
-        distance = sorted(self.tr_set, key=lambda item: L2_norm(x_val, item.value_vector))                      #сортирует точки в зависимости от расстояния до заданной
-        distance = distance[:self.k]                                                                            #оставляет только первые k из них
+        distance = sorted(self.tr_set, key=lambda item: L2_norm(x_val, item.value_vector))      #сортирует точки в зависимости от расстояния до заданной
+        distance = distance[:self.k]                                                            #оставляет только первые k из них
 
-        class_variety = [item.ob_class for item in distance]                                                    #массив из значений классов, которым принадлежат ближайшие k соседей
+        class_variety = [item.ob_class for item in distance]                                    #массив из значений классов, которым принадлежат ближайшие k соседей
 
-        return Counter(class_variety).most_common(1)[0][0]                                                      # возвращает класс, который встречался наибольшее число раз в массиве class_variety
+        return Counter(class_variety).most_common(1)[0][0]                                      # возвращает класс, который встречался наибольшее число раз в массиве class_variety
 
 
 points = np.array([[2, 2], [1, 1], [3, 1], [6, 5], [6, 4], [5, 3]])
