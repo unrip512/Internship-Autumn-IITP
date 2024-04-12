@@ -11,6 +11,6 @@ client_socket.send((str(num)).encode())
 
 for i in range(num):
     data = client_socket.recv(1024)
-    print(f'cl1: Получено: {data.decode()}')
+    print(f'cl2: Получено: {data.decode()}')
 
 client_socket.close()
